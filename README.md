@@ -53,19 +53,19 @@ THEN I should have proper build scripts for a webpack application
 Needed
 
 - `client/webpack.config.js`
-  - [ ] Add and configure workbox plugins for a service worker and manifest file
-  - [ ] Add CSS loaders and babel to webpack
+  - [x] Add and configure workbox plugins for a service worker and manifest file
+  - [x] Add CSS loaders and babel to webpack
 - `client/src-sw.js`
-  - [ ] Implement asset caching
+  - [x] Implement asset caching
 - `client/src/js/install.js`
-  - [ ] Add Event handler to the `beforeinstallprompt` event
-  - [ ] Implement a click event handler on the `butInstall` element
-  - [ ] Add a handler for the `appinstalled` event
+  - [x] Add Event handler to the `beforeinstallprompt` event
+  - [x] Implement a click event handler on the `butInstall` element
+  - [x] Add a handler for the `appinstalled` event
 - `client/src/js/database.js`
-  - [ ] Add logic to a method that accepts some content and adds it to the database
-  - [ ] Add logic for a method that gets all the content from the database
+  - [x] Add logic to a method that accepts some content and adds it to the database
+  - [x] Add logic for a method that gets all the content from the database
 
-Optional
+### Wishlist (Optional!)
 
 - `server/routes/htmlRoutes.js`
   - [ ] Add more routes?
@@ -88,6 +88,6 @@ Optional
   - [ ] This should also pre-cache the static assets along with subsequent pages.
 - [ ] Deploy application to Heroku with a proper Webpack build script.
 
-## WishList
+## WishList (Optional!)
 
 - [ ] Make it more "NeoVim" like. (Probably shouldn't have called it "PWAVim" when they already had "JATE" as the name. Oh well. This is a better name anyway.)
