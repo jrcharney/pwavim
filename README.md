@@ -91,3 +91,12 @@ Needed
 ## WishList (Optional!)
 
 - [ ] Make it more "NeoVim" like. (Probably shouldn't have called it "PWAVim" when they already had "JATE" as the name. Oh well. This is a better name anyway.)
+
+## Things applied
+
+- Added CodeMirror, but CodeMirror doesn't have a class called `CodeMirror`, so might want to look into that later.
+
+## Bugs
+
+- Saved file does not load from `idb` because `e.split` is not a function in `codemirror.min.js`?
+- `Failed to register a ServiceWorker for scope ('http://localhost:3000/') with script ('http://localhost:3000/src-sw.js'): A bad HTTP response code (404) was received when fetching the script.`

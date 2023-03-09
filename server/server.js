@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //require('./routes/htmlRoutes')(app);
-import { htmlRoutes } from './routes/htmlRoutes';
+import htmlRoutes from './routes/htmlRoutes.js';
 htmlRoutes(app);
 
 app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));

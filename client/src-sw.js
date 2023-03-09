@@ -5,16 +5,7 @@ import { CacheFirst } from "workbox-strategies";
 import { registerRoute } from "workbox-routing";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { ExpirationPlugin } from "workbox-expiration";
-import { precacheAndRoute } from "workbox-precache/precacheAndRoute";
-
-/*
-const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
-const { CacheFirst } = require('workbox-strategies');
-const { registerRoute } = require('workbox-routing');
-const { CacheableResponsePlugin } = require('workbox-cacheable-response');
-const { ExpirationPlugin } = require('workbox-expiration');
-const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
-*/
+import { precacheAndRoute } from "workbox-precaching/precacheAndRoute.mjs";
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -38,15 +29,19 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
+// TODO: Why isn't pageCache used here?
 registerRoute(
   ({ request }) => ['style','script','worker'].includes(request.destination),
-  new StaleWhileRevalidate({
+  new CacheFirst({
     cacheName: 'asset-cache',
     plugins: [
       // Note: Cache responses with CacheableResponsePlugin will be stored for up to 30 days.
       new CacheableResponsePlugin({
         statuses: [0, 200],
-      })
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 2592000,
+      }),
     ]
   })
 );

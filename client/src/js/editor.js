@@ -1,6 +1,8 @@
 // Import methods to save and get data from the indexedDB database in './database.js'
-import { getDb, putDb } from './database';
-import { header } from './header';
+import { getDb, putDb } from './database.js';
+import { header } from './header.js';
+// import CodeMirror from 'codemirror';   // There's just one problem: The codemirror module DOESN'T have a Codemirror class.
+
 
 export default class {
   constructor() {
@@ -11,6 +13,7 @@ export default class {
       throw new Error('CodeMirror is not loaded');
     }
 
+    // TODO: Revise this later so CodeMirror can actually use this. This is probably not the right class declaration.
     this.editor = CodeMirror(document.querySelector('#main'), {
       value: '',
       mode: 'javascript',
