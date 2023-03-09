@@ -4,6 +4,8 @@ Homework Challenge 19 - Due March 7, 2023
 
 - Website: https://pwavim.herokuapp.com/
 
+[![Screenshot](./pwavim-screenshot.png)](https://pwavim.herokuapp.com/)
+
 ## Introduction
 
 In my probably (crazy) attempt to code things the right way (STOP USING COMMON JS!), I've decided to try and combine Neovim with this code exercise.  Why do I always do these things?!
